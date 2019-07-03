@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Zax Web App";
+}
+
+<div class="text-center" id="intro">
+    <h1 class="display-4">What's up?</h1>
+    <p>The time on the server is @DateTime.Now</p>
+</div>
+
+<hr>
+
+<div id="basic">
+
+	@{ var title = "Zax Web App"; }
+	<p>@title is dope</p> 
+
+	@{
+	var greeting = "Welcome to " + title + "!";
+	var weekDay = DateTime.Now.DayOfWeek;
+	var greetingMessage = greeting + "Today is: " + weekDay;
+	}
+	<p>@greetingMessage</p>
+</div>
+@for(var j = 1; j < 10; j++)
+    {<p>i_d @j: 000 - @j</p><hr>}
+
+<hr>
+@{
+string[] members = {"Jani", "Hege", "Kai", "Jim"};
+int i = Array.IndexOf(members, "Kai")+1;
+int len = members.Length;
+string x = members[2-1];
+}
+<h3>Members</h3>
+@foreach (var person in members)
+{
+<p>@person</p>
+}
+<p>The number of names in Members are @len</p>
+<p>The person at position 2 is @x</p>
+<p>Kai is now in position @i</p>
